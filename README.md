@@ -1,4 +1,14 @@
-# Screen Console Logging Tool
+# Screen Console Logging Tool for Godot
+
+Screen Console is a tool that allows you to print messages to the screen for debugging and development purposes.
+
+It was developed as part of the development of the Kitchen Madness game, but I decided to make the tool open source since I believe that other may have the same issue.
+
+![Screen Console](images/Screenshot-02.png "Screen Console")
+
+## Requirements:
+
+* Godot 4.0 +
 
 ## How to Setup?
 
@@ -13,6 +23,9 @@
 Done!
 
 ## Properties
+
+![Screen Console](images/Screenshot-01.png "Screen Console")
+
 ### Debug Enabled
 Enables/Disable logging with the Screen Console tool. This makes it so you don't really have to delete or comment it out the `SConsole.print()` in your code.
 
@@ -28,13 +41,32 @@ Time messages will stay on screen in seconds.
 
 After that messages will be automatically deleted.
 
-* Show Timestamp:
-* Left Offset:
-* Top Offset:
-* Vertical Space:
-* Font Color:
-* Font Size:
-* Anchor:
+### Show Timestamp
+If enabled a current timestamp will appear next to the log message.
+
+### Left/Right Offset:
+Distance from the side of the screen. Being left or right depending on where the messages are being anchored set by the `Anchor to` property.
+
+### Top/Bottom Offset:
+Distance from the top or bottom of the screen. Being top or bottom depending on where the messages are being anchored set by the `Anchor to` property.
+
+### Vertical Space:
+Vertical spacing between messages. Bigger fonts may need bigger vertical spacing.
+
+### Font Color:
+Well, pretty self explanatory.
+
+### Font Size:
+Well, pretty self explanatory.
+
+### Anchor:
+Where on the screen you would like the messages to be anchored to.
+
+* Top-Left
+* Top-Right
+* Bottom-Left
+* Bottom-Right
+
 
 ## How to use it?
 
