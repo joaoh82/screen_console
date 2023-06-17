@@ -1,6 +1,6 @@
 # Screen Console Logging Tool for Godot
 
-Screen Console is a tool that allows you to print messages to the screen for debugging and development purposes.
+Screen Console is a logging tool made for Godot 4 that allows you to print messages to the screen for debugging and development purposes.
 
 It was developed as part of the development of the Kitchen Madness game, but I decided to make the tool open source since I believe that other may have the same issue.
 
