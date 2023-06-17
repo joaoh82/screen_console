@@ -1,0 +1,187 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkw716jprs1ik"]
+
+[ext_resource type="Script" path="res://addons/screen_console/main_panel.gd" id="1_trmv1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_osyjl"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0dncg"]
+font_size = 24
+
+[node name="MainPanel" type="VBoxContainer" node_paths=PackedStringArray("_left_value")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_trmv1")
+_left_value = NodePath("")
+
+[node name="BasicConfigVBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="AppearanceLabel" type="Label" parent="BasicConfigVBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_osyjl")
+text = "Basic Config"
+label_settings = SubResource("LabelSettings_0dncg")
+
+[node name="DebugEnabledHBoxContainer" type="HBoxContainer" parent="BasicConfigVBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="BasicConfigVBoxContainer/DebugEnabledHBoxContainer"]
+layout_mode = 2
+text = "Debug Enabled: "
+
+[node name="DebugEnabledCheckBox" type="CheckBox" parent="BasicConfigVBoxContainer/DebugEnabledHBoxContainer"]
+layout_mode = 2
+button_pressed = true
+
+[node name="TimeoutHBoxContainer" type="HBoxContainer" parent="BasicConfigVBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="BasicConfigVBoxContainer/TimeoutHBoxContainer"]
+layout_mode = 2
+text = "Timeout: "
+
+[node name="TimeoutLineEdit" type="SpinBox" parent="BasicConfigVBoxContainer/TimeoutHBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+step = 0.1
+value = 5.0
+
+[node name="TimestampHBoxContainer" type="HBoxContainer" parent="BasicConfigVBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="BasicConfigVBoxContainer/TimestampHBoxContainer"]
+layout_mode = 2
+text = "Show timestamp: "
+
+[node name="TimestampCheckBox" type="CheckBox" parent="BasicConfigVBoxContainer/TimestampHBoxContainer"]
+layout_mode = 2
+button_pressed = true
+
+[node name="BufferHBoxContainer" type="HBoxContainer" parent="BasicConfigVBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="BasicConfigVBoxContainer/BufferHBoxContainer"]
+layout_mode = 2
+text = "Messages buffer:"
+
+[node name="BufferLineEdit" type="SpinBox" parent="BasicConfigVBoxContainer/BufferHBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 50.0
+value = 10.0
+
+[node name="LayoutVBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="LayoutLabel" type="Label" parent="LayoutVBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_osyjl")
+text = "Layout
+"
+label_settings = SubResource("LabelSettings_0dncg")
+
+[node name="LeftOffsetHBoxContainer" type="HBoxContainer" parent="LayoutVBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="LeftOffsetLabel" type="Label" parent="LayoutVBoxContainer/LeftOffsetHBoxContainer"]
+layout_mode = 2
+text = "Left/Right Offset:"
+
+[node name="LeftOffsetLineEdit" type="SpinBox" parent="LayoutVBoxContainer/LeftOffsetHBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+value = 10.0
+
+[node name="TopOffsetHBoxContainer" type="HBoxContainer" parent="LayoutVBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="TopOffsetLabel" type="Label" parent="LayoutVBoxContainer/TopOffsetHBoxContainer"]
+layout_mode = 2
+text = "Top/Bottom Offset:"
+
+[node name="TopOffsetLineEdit" type="SpinBox" parent="LayoutVBoxContainer/TopOffsetHBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+value = 10.0
+
+[node name="VerticalSpaceHBoxContainer" type="HBoxContainer" parent="LayoutVBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="VerticalSpaceLabel" type="Label" parent="LayoutVBoxContainer/VerticalSpaceHBoxContainer"]
+layout_mode = 2
+text = "Vertical Space: "
+
+[node name="VerticalSpaceLineEdit" type="SpinBox" parent="LayoutVBoxContainer/VerticalSpaceHBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+value = 40.0
+
+[node name="AnchorHBoxContainer" type="HBoxContainer" parent="LayoutVBoxContainer"]
+layout_mode = 2
+
+[node name="AnchorLabel" type="Label" parent="LayoutVBoxContainer/AnchorHBoxContainer"]
+layout_mode = 2
+text = "Anchor to: "
+
+[node name="AnchorOptionButton" type="OptionButton" parent="LayoutVBoxContainer/AnchorHBoxContainer"]
+layout_mode = 2
+item_count = 4
+selected = 0
+popup/item_0/text = "Top-Left"
+popup/item_0/id = 0
+popup/item_1/text = "Top-Right"
+popup/item_1/id = 1
+popup/item_2/text = "Bottom-Left"
+popup/item_2/id = 2
+popup/item_3/text = "Bottom-Right"
+popup/item_3/id = 3
+
+[node name="AppearanceVBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="AppearanceLabel" type="Label" parent="AppearanceVBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_osyjl")
+text = "Appearance
+"
+label_settings = SubResource("LabelSettings_0dncg")
+
+[node name="FontColorHBoxContainer" type="HBoxContainer" parent="AppearanceVBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="AppearanceVBoxContainer/FontColorHBoxContainer"]
+layout_mode = 2
+text = "Font Color:"
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="AppearanceVBoxContainer/FontColorHBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.0627451, 0.713726, 0, 1)
+
+[node name="FontSizeHBoxContainer" type="HBoxContainer" parent="AppearanceVBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="FontSizeLabel" type="Label" parent="AppearanceVBoxContainer/FontSizeHBoxContainer"]
+layout_mode = 2
+text = "Font Size: "
+
+[node name="FontSizeLineEdit" type="SpinBox" parent="AppearanceVBoxContainer/FontSizeHBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+value = 36.0
+
+[node name="SaveButton" type="Button" parent="."]
+layout_mode = 2
+text = "Save!"
