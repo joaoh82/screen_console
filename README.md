@@ -44,22 +44,19 @@ After that messages will be automatically deleted.
 ### Show Timestamp
 If enabled a current timestamp will appear next to the log message.
 
-### Left/Right Offset:
-Distance from the side of the screen. Being left or right depending on where the messages are being anchored set by the `Anchor to` property.
-
-### Top/Bottom Offset:
-Distance from the top or bottom of the screen. Being top or bottom depending on where the messages are being anchored set by the `Anchor to` property.
-
 ### Vertical Space:
 Vertical spacing between messages. Bigger fonts may need bigger vertical spacing.
 
 ### Font Color:
 Well, pretty self explanatory.
 
+### Background Color:
+Color for the background layer. So it is easier to see the logs on screen.
+
 ### Font Size:
 Well, pretty self explanatory.
 
-### Anchor:
+### Anchor (Disabled until I fix a bug):
 Where on the screen you would like the messages to be anchored to.
 
 * Top-Left
@@ -90,13 +87,14 @@ That is all!
 - [x] Be able to configure font color.
 - [x] Be able to configure font size.
 - [x] Be able to enale and disable logging messages to screen with checkbox.
+- [x] Add layer as a background of messages
 
 ### Roadmap
 Features that are in the roadmap of the project:
 
 *Ideally in order of priority, but nothing set in stone.*
 
-- [ ] Add layer as a background of messages
+- [ ] Fix Anchor bug
 - [ ] Add custom formatting of messages
 - [ ] Add options to save logging to disc
 
