@@ -37,14 +37,12 @@ func _load_config():
 	$BasicConfigVBoxContainer/TimeoutHBoxContainer/TimeoutLineEdit.value = _screen_console._timeout
 	_screen_console._show_timestamp = bool(_plugin_config.get_value("config", "show_timestamp"))
 	$BasicConfigVBoxContainer/TimestampHBoxContainer/TimestampCheckBox.button_pressed = _screen_console._show_timestamp
-	_screen_console._left_offset = float(_plugin_config.get_value("config", "left_offset"))
-	$LayoutVBoxContainer/LeftOffsetHBoxContainer/LeftOffsetLineEdit.value = _screen_console._left_offset
-	_screen_console._top_offset = float(_plugin_config.get_value("config", "top_offset"))
-	$LayoutVBoxContainer/TopOffsetHBoxContainer/TopOffsetLineEdit.value = _screen_console._top_offset
 	_screen_console._vertical_space = float(_plugin_config.get_value("config", "vertical_space"))
 	$LayoutVBoxContainer/VerticalSpaceHBoxContainer/VerticalSpaceLineEdit.value = _screen_console._vertical_space
 	_screen_console._font_color = _plugin_config.get_value("config", "font_color")
 	$AppearanceVBoxContainer/FontColorHBoxContainer/ColorPickerButton.color = Color(_screen_console._font_color)
+	_screen_console._background_color = _plugin_config.get_value("config", "background_color")
+	$AppearanceVBoxContainer/BackgroundColorHBoxContainer/ColorPickerButton.color = Color(_screen_console._background_color)
 	_screen_console._font_size = float(_plugin_config.get_value("config", "font_size"))
 	$AppearanceVBoxContainer/FontSizeHBoxContainer/FontSizeLineEdit.value = _screen_console._font_size
 	_screen_console._anchor = int(_plugin_config.get_value("config", "anchor"))
@@ -60,14 +58,12 @@ func _save_config():
 	_plugin_config.set_value("config", "timeout", _screen_console._timeout)
 	_screen_console._show_timestamp = $BasicConfigVBoxContainer/TimestampHBoxContainer/TimestampCheckBox.button_pressed
 	_plugin_config.set_value("config", "show_timestamp", _screen_console._show_timestamp)
-	_screen_console._left_offset = float($LayoutVBoxContainer/LeftOffsetHBoxContainer/LeftOffsetLineEdit.value)
-	_plugin_config.set_value("config", "left_offset", _screen_console._left_offset)
-	_screen_console._top_offset = float($LayoutVBoxContainer/TopOffsetHBoxContainer/TopOffsetLineEdit.value)
-	_plugin_config.set_value("config", "top_offset", _screen_console._top_offset)
 	_screen_console._vertical_space = float($LayoutVBoxContainer/VerticalSpaceHBoxContainer/VerticalSpaceLineEdit.value)
 	_plugin_config.set_value("config", "vertical_space", _screen_console._vertical_space)
 	_screen_console._font_color = $AppearanceVBoxContainer/FontColorHBoxContainer/ColorPickerButton.color.to_html(true)
 	_plugin_config.set_value("config", "font_color", _screen_console._font_color)
+	_screen_console._background_color = $AppearanceVBoxContainer/BackgroundColorHBoxContainer/ColorPickerButton.color.to_html(true)
+	_plugin_config.set_value("config", "background_color", _screen_console._background_color)
 	_screen_console._font_size = float($AppearanceVBoxContainer/FontSizeHBoxContainer/FontSizeLineEdit.value)
 	_plugin_config.set_value("config", "font_size", _screen_console._font_size)
 	_screen_console._anchor = int($LayoutVBoxContainer/AnchorHBoxContainer/AnchorOptionButton.selected)

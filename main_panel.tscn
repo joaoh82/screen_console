@@ -49,7 +49,7 @@ text = "Timeout: "
 layout_mode = 2
 size_flags_horizontal = 3
 step = 0.1
-value = 5.0
+value = 30.0
 
 [node name="TimestampHBoxContainer" type="HBoxContainer" parent="BasicConfigVBoxContainer"]
 layout_mode = 2
@@ -87,32 +87,6 @@ text = "Layout
 "
 label_settings = SubResource("LabelSettings_0dncg")
 
-[node name="LeftOffsetHBoxContainer" type="HBoxContainer" parent="LayoutVBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 10
-
-[node name="LeftOffsetLabel" type="Label" parent="LayoutVBoxContainer/LeftOffsetHBoxContainer"]
-layout_mode = 2
-text = "Left/Right Offset:"
-
-[node name="LeftOffsetLineEdit" type="SpinBox" parent="LayoutVBoxContainer/LeftOffsetHBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-value = 10.0
-
-[node name="TopOffsetHBoxContainer" type="HBoxContainer" parent="LayoutVBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 10
-
-[node name="TopOffsetLabel" type="Label" parent="LayoutVBoxContainer/TopOffsetHBoxContainer"]
-layout_mode = 2
-text = "Top/Bottom Offset:"
-
-[node name="TopOffsetLineEdit" type="SpinBox" parent="LayoutVBoxContainer/TopOffsetHBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-value = 10.0
-
 [node name="VerticalSpaceHBoxContainer" type="HBoxContainer" parent="LayoutVBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 10
@@ -135,6 +109,7 @@ text = "Anchor to: "
 
 [node name="AnchorOptionButton" type="OptionButton" parent="LayoutVBoxContainer/AnchorHBoxContainer"]
 layout_mode = 2
+disabled = true
 item_count = 4
 selected = 0
 popup/item_0/text = "Top-Left"
@@ -168,6 +143,19 @@ text = "Font Color:"
 layout_mode = 2
 size_flags_horizontal = 3
 color = Color(0.0627451, 0.713726, 0, 1)
+
+[node name="BackgroundColorHBoxContainer" type="HBoxContainer" parent="AppearanceVBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="AppearanceVBoxContainer/BackgroundColorHBoxContainer"]
+layout_mode = 2
+text = "Background Color:"
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="AppearanceVBoxContainer/BackgroundColorHBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.490196, 0.490196, 0.490196, 0.490196)
 
 [node name="FontSizeHBoxContainer" type="HBoxContainer" parent="AppearanceVBoxContainer"]
 layout_mode = 2
