@@ -4,6 +4,9 @@ Screen Console is a logging tool made for Godot 4 that allows you to print messa
 
 It was developed as part of the development of the Kitchen Madness game, but I decided to make the tool open source since I believe that other may have the same issue.
 
+Wishlist Kitchen Madness on steam: https://store.steampowered.com/app/2450740/Kitchen_Madness/
+
+
 ![Screen Console](images/Screenshot-02.png "Screen Console")
 
 ## Requirements:
