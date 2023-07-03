@@ -5,7 +5,7 @@ extends VBoxContainer
 
 var _screen_console : ScreenConsole = ScreenConsole.new()
 
-var _plugin_config : ConfigFile =  ConfigFile.new()
+var _plugin_config : ConfigFile
 
 var _config_path : String = "res://addons/screen_console/plugin.cfg"
 
@@ -22,6 +22,7 @@ func _on_save_button_pressed():
 
 func _load_config():
 	_plugin_config = ConfigFile.new()
+	
 	# Load data from a file.
 	var err = _plugin_config.load(_config_path)
 

@@ -5,7 +5,7 @@ var _messages_array : Array[Label]
 var _messages_on_screen : int
 var _last_top_position : int = 0
 
-var timer : Timer
+var _timer_array : Array[Timer]
 
 var _debug_enabled : bool = false
 var _messages_buffer : int
@@ -17,7 +17,7 @@ var _background_color : String
 var _font_size : float
 var _anchor : int
 
-var _plugin_config : ConfigFile =  ConfigFile.new()
+var _plugin_config : ConfigFile
 
 var _config_path : String = "res://addons/screen_console/plugin.cfg"
 
@@ -26,10 +26,17 @@ var _top_margin_container = MarginContainer.new()
 # Create a new VBoxContainer
 var _log_container = VBoxContainer.new()
 
+
 func _ready():
 	_load_config()
 	_setup()
-	
+
+
+func _exit_tree():
+	# Remove the MarginContainer from the current scene
+	_top_margin_container.queue_free()
+
+
 func _setup():
 	# Adds label to the top of every other node
 	_top_margin_container.z_index = 10
@@ -153,7 +160,9 @@ func print(message : String):
 
 func _remove_message(timeout : float):
 	# Create a new Timer
-	timer = Timer.new()
+	var timer = Timer.new()
+	
+	_timer_array.append(timer)
 	
 	# Add the timer as a child of this node
 	add_child(timer)
@@ -175,6 +184,10 @@ func _on_remove_message_timeout():
 	# in case there are no messages on screen, hides container
 	if _messages_on_screen == 0:
 		_top_margin_container.visible = false
+
+	var timer : Timer = _timer_array.pop_front()
+
+	timer.queue_free()
 
 
 func _get_timestamp_formatted() -> String:
