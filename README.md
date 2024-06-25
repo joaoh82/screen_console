@@ -12,7 +12,6 @@ Wishlist Kitchen Madness on steam: https://store.steampowered.com/app/2450740/Ki
 ## Requirements:
 
 * Godot 4.0 +
-* 
 
 ## How to Setup?
 
